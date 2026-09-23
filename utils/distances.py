@@ -23,3 +23,16 @@ def euclidean(a, b):
 
         distance = (d_x ** 2 + d_y ** 2) ** 0.5
         return distance
+
+def manhattan(a, b):
+    return minkowski(a, b, 1)
+
+def euclidean(a, b):
+    return minkowski(a, b, 2)
+
+def minkowski(a, b, p):
+    d_x = abs(b[0] - a[0])
+    d_y = abs(b[1] - a[1])
+
+    distance = (d_x ** p + d_y ** p) ** (1/p)
+    return distance
